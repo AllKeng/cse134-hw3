@@ -5,33 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Allen's Website: Contact Me</title>
      <!-- Placeholder for the external CSS file -->
-     <link rel="stylesheet" href="styles.css"> <!-- This file doesn't exist yet -->
+     <link rel="stylesheet" href="css/styles.css"> 
 </head>
 <body>
-    <header>
-        <h1>Navigation</h1>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Projects</a></li>
-            <li><a href="info.html">Resume</a></li>
-            <li><a href="labs.html">Experiment</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
+  <header>
+      <nav>
+        <!-- Hidden checkbox for toggle functionality -->
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
+        <!-- Hamburger icon for small screens -->
+        <label for="hamburger-toggle" class="hamburger-menu" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Projects</a></li>
+          <li><a href="info.html">Resume</a></li>
+          <li><a href="labs.html">Experiment</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
       <!-- Main Content -->
       <main>
         <section>
-          <dialog open>
-            <p>Feel free to contact me!</p>
+          <h2> My Contact Information</h2>
+          <dialog open id="contact-dialog">
+            <h3>Get in Touch</h3>
+            <p>If you'd like to reach out, you can contact me through the form below 
+              <ins>or directly via email and LinkedIn:</ins>
+            </p>
+            
+            <!-- Close button within a form -->
+            <form method="dialog">
+              <button type="submit">Close</button>
+            </form>
           </dialog>
-            <h2>Get in Touch</h2>
-            <p>If you'd like to reach out, you can contact me through the form below <ins>or directly via email and LinkedIn:</ins></p>
-
-            <!-- Div container holding inline circle SVG and text -->
-            <div>
+          <section class="contact-methods">
+            <!-- LinkedIn Contact -->
+            <div class="contact-item">
               <a href="https://www.linkedin.com/in/allen-keng-71980324b/" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24">
                   <!-- Circle SVG -->
@@ -40,14 +54,17 @@
                 <span>https://www.linkedin.com/in/allen-keng-71980324b/</span>
               </a>
             </div>
-            
-            <!-- Contact Details -->
-            <address>
-                <p><strong>Email:</strong> <a href="mailto:aekeng@ucsd.edu">aekeng@ucsd.edu</a></p>
+          
+            <!-- Email Contact -->
+            <address class="contact-item">
+              <p><strong>Email:</strong> <a href="mailto:aekeng@ucsd.edu">aekeng@ucsd.edu</a></p>
             </address>
-
-            <p><strong>GitHub:</strong> <a href="https://github.com/AllKeng/" target="_blank">https://github.com/AllKeng/</a></p>
-            <form>
+          
+            <!-- GitHub Contact -->
+            <p class="contact-item"><strong>GitHub:</strong> <a href="https://github.com/AllKeng/" target="_blank">https://github.com/AllKeng/</a></p>
+          </section>
+          
+            <form action="/message" method="get">
               <fieldset>
                   <legend>Contact Me </legend>
                   <label for="name">Name:</label>

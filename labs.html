@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Allen's Website: Experiments</title>
      <!-- Placeholder for the external CSS file -->
-     <link rel="stylesheet" href="styles.css"> <!-- This file doesn't exist yet -->
+     <link rel="stylesheet" href="css/styles.css"> 
 </head>
 <body>
 
@@ -28,9 +28,16 @@
         customElements.define('hello-world', HelloWorld);
     </script>
     <header>
-        <h1>Navigation</h1>
         <nav>
-          <ul>
+          <!-- Hidden checkbox for toggle functionality -->
+          <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
+          <!-- Hamburger icon for small screens -->
+          <label for="hamburger-toggle" class="hamburger-menu" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="portfolio.html">Projects</a></li>
             <li><a href="info.html">Resume</a></li>

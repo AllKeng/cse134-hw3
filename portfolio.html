@@ -5,89 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Allen's Website: Projects</title>
      <!-- Placeholder for the external CSS file -->
-     <link rel="stylesheet" href="styles.css"> <!-- This file doesn't exist yet -->
-     <style>
-      fancy-card {
-          display: block;
-          border: 2px solid currentColor;
-          padding: 1.5rem;
-          border-radius: 8px;
-          max-width: 300px;
-          margin: 1rem auto;
-          background: #f9f9f9;
-          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      fancy-card header {
-          font-size: 1.5rem;
-          font-weight: bold;
-          margin-bottom: 0.5rem;
-          text-align: center;
-      }
-
-      fancy-card ul {
-          font-size: 1rem;
-          line-height: 1.5;
-          text-align: center;
-          list-style-position: inside;
-      }
-
-      fancy-card footer {
-          margin-top: 1rem;
-          text-align: center;
-          font-size: 0.9rem;
-          font-style: italic;
-          color: gray;
-      }
-      /* Mobile-friendly layout */
-      @media (max-width: 768px) {
-          fancy-card {
-              max-width: 95vw;
-              padding: 5vh 6vw;
-          }
-          fancy-card p {
-              max-width: 90%;
-          }
-      }
-
-      /* Larger screen optimizations */
-      @media (min-width: 1024px) {
-          fancy-card {
-              max-width: 50vw;
-              padding: 4vh 5vw;
-          }
-      }
-  </style>
+     <link rel="stylesheet" href="css/styles.css"> 
 </head>
 <body>
-    <header>
-        <h1>Navigation</h1>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Projects</a></li>
-            <li><a href="info.html">Resume</a></li>
-            <li><a href="labs.html">Experiment</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-
+  <header>
+    <nav>
+      <!-- Hidden checkbox for toggle functionality -->
+      <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
+      <!-- Hamburger icon for small screens -->
+      <label for="hamburger-toggle" class="hamburger-menu" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Projects</a></li>
+        <li><a href="info.html">Resume</a></li>
+        <li><a href="labs.html">Experiment</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
       <main>
         <hr>
         <section>
           <hgroup>
-            <h1>The Project List</h1>
-            <h3>Below are some projects that I have collaborated on. </h2>
+            <h2>List of Projects</h2>
+            <h3>These are projects I have collaborated. </h3>
           </hgroup>
           <fancy-card>
             <header>Snowboard Support System</header>
             <!-- Picture Element: Responsive Images -->
-            <h2>Picture Example</h2>
             <picture>
-                <source srcset="media/BoardViewOptimizedDontUseYet.png">
-                <source srcset="media/BoardViewOptimizedDontUseYet.png">
-                <img src="media/BoardViewOptimizedDontUseYet.png" alt="TripleS Board">
+                <source srcset="media/BoardView.png" media="min-width: 1024px" alt="TripleS Board">
+                <!-- Medium image for tablets -->
+                <source srcset="media/BoardView-tablet.png" media="(min-width: 768px)" alt="TripleS Board">
+                
+                <!-- Small image for mobile -->
+                <img src="media/BoardView-mobile.png" alt="TripleS Board">
             </picture>
             <ul>
               <li>Arduino C for accelerometer data retrieval 
@@ -99,7 +56,8 @@
               <li>Python GUI to retrieve and display data via 
                 Bleak and Tkinter.
               </li>
-              <li>Project website using HTML, JS, CSS.</li>
+              <li><a href="https://allkeng.github.io/Snowboard-Support-System/">Project website</a> 
+                using HTML, JS, CSS.</li>
             </ul>
             <footer>C, Python, Bluetooth Low Energy, HTML, JS, CSS</footer>
           </fancy-card>
@@ -108,8 +66,7 @@
             <header>Pantry Pals</header>
             <!-- Video Element -->
           <video controls>
-              <source src="media/pantrypalDemoDontUseYet.mp4" type="video/mp4">
-              <source src="media/pantrypalDemoDontUseYet.mp4" type="video/ogg">
+              <source src="media/pantrypalDemo.mp4" type="video/mp4">
               Your browser does not support the video element.
           </video>
             <ul>

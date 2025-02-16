@@ -7,13 +7,20 @@
     <!-- Placeholder for now -->
     <style></style>
      <!-- Placeholder for the external CSS file -->
-     <link rel="stylesheet" href="styles.css"> <!-- This file doesn't exist yet -->
+     <link rel="stylesheet" href="css/styles.css"> 
 </head>
 <body>
     <header>
-        <h1>Navigation</h1>
         <nav>
-          <ul>
+          <!-- Hidden checkbox for toggle functionality -->
+          <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
+          <!-- Hamburger icon for small screens -->
+          <label for="hamburger-toggle" class="hamburger-menu" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="portfolio.html">Projects</a></li>
             <li><a href="info.html">Resume</a></li>
@@ -23,55 +30,53 @@
         </nav>
       </header>
 
-      <aside>
-        <p>Created for CSE134B: Web Client Languages</p>
-      </aside>
-
       <!-- Main Content -->
       <main>
-        <section>
-            <h2>About Me</h2>
-            <p>Hello, I'm a Computer Engineering major at UC San Diego. Welcome to my portfolio! 
-            Something about me is that I love putting myself in new situations and facing challenges.<br>
-            <em> It's just a part of who I am.</em> 
-            <br>I always want to do more, be more.</p>
-            <img src="profile.jpg" alt="Headshot">
+        <h2>About Me</h2>
+        <section class="about-content">
+          <picture>
+            <img src="media/headshot.jpg" alt="Image of Me" class="headshot">
+          </picture>
+          <p class="about-text">Hello, welcome to my portfolio! <br> I'm a Computer Engineering major at UC San Diego.  <br> <br>
+          Something about me is that I love putting myself in new situations and facing challenges.<br>
+          <em> It's just a part of who I am.</em> <br>
+          <br>I always want to do more, be more.</p>
+          <aside class="sidebar">
+            <h3>My Interests</h3>
+            <ul>
+              <li><strong>Embedded Software</strong>: Specifically for wireless systems, focusing on the development of software that interacts with and controls wireless communication devices.</li>
+              <br>
+              <li>
+                <abbr title="Field Programmable Gate Arrays"><strong>FPGA</abbr> Design and Verification</strong>: 
+                <dfn title="Definition of Field Programmable Gate Arrays">FPGAs</dfn> are small, programmable integrated circuits that allow users to configure digital logic. This enables custom designs for a wide variety of applications.
+              </li>
+            </ul>
+          </aside>
         </section>
+      </main>
+        
 
-        <section>
+        <section class="about-section">
           <h3>A quote that I abide by</h3>
           <blockquote>
             “You don't learn to walk by following rules. You learn by doing, and by falling over.”
               <cite>— Richard Branson</cite>
           </blockquote>
-      </section>
 
-        <hr>
+          <details>
+            <summary>Why did I choose Computer Engineering as a major?</summary>
+            <p>I am interested in the connection between software and hardware. I can learn more about whether or not software or hardware can be improved to optimize a process.</p>
+          </details>
 
-        <section>
-            <h3>My Interests</h3>
-            <ul>
-                <li>Embedded Software: specifically wireless systems</li>
-                <li><abbr title="Field Programmable Gate Arrays">FPGA</abbr> Design and Verification: <dfn title="Definition of a term">FPGAs</dfn> are tiny boxes of digital logic that you can configure/program to make stuff with.</li>
-                
-            </ul>
-            <details>
-              <summary>Why did I choose Computer Engineering as a major?</summary>
-              <p>I am interested in the connection between software and hardware. I can learn more about whether or not software or hardware can be improved to optimize a process.</p>
-            </details>
-
-            <details>
-              <summary>What is my current focus? </summary>
-              <p><span>Learning about VLSI Integrated Circuits and Systems Design in Industry</span></p>
-            </details>
-          
-            
+          <details>
+            <summary>What is my current focus? </summary>
+            <p><span>Learning about VLSI Integrated Circuits and Systems Design in Industry</span></p>
+          </details>
         </section>
-      </main>
 
       <!-- Footer -->
       <footer>
-        <p>&copy; 2025 Allen's Portfolio</p>
+        <p> &copy; 2025 Allen's Portfolio : Created for CSE134B: Web Client Languages</p>
       </footer>
 </body>
 </html>
