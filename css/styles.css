@@ -1,8 +1,10 @@
 
 /* Define CSS variable at the top of the stylesheet */
 :root {
-    --primary-color: #0c0269; /* The variable name and its value */
+    --primary-color: #0c0269; 
     --text-emphasis: #ff6347;
+    --button-color: color(display-p3 0.1 0.9 0.1); /* A cool, vibrant green */
+    --mix-color: color(display-p3 0.9 0.3 0.9); 
 }
 
 /* Base Styles (Desktop & Laptop) */
@@ -11,7 +13,7 @@ header > nav {
     justify-content: center;
     align-items: center;
     padding: 1rem 3rem;
-    background: var(--primary-color);
+    background: var(--primary-color, darkblue);
     color: white;
   }
   
@@ -42,9 +44,9 @@ header > nav {
   }
   
   .hamburger-menu span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-emphasis);
+    width: 40px;
+    height: 4px;
+    background-color: color-mix(in srgb, var(--button-color) 60%, var(--mix-color) 85%); /* Silvery */
     border-radius: 5px;
   }
   
@@ -52,9 +54,11 @@ header > nav {
   .hamburger-toggle {
     display: none;
   }
+
+
   
-  /* Media Query for screens less than 400px */
-  @media (max-width: 400px) {
+  /* Media Query for screens less than 480px */
+  @media (max-width: 480px) {
     .nav-links a {
         text-decoration: none;
         color: #333;
@@ -103,25 +107,25 @@ nav ul li a {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-nav ul {
-    flex-direction: column;
-}
+    nav ul {
+        flex-direction: column;
+    }
 
-nav ul li {
-    margin: 0.5rem 0;
-}
+    nav ul li {
+        margin: 0.5rem 0;
+    }
 }
 
 .about-content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 0.8fr 1.6fr 1fr;  /* Two columns for text and image */
     align-items: center; /* Centers vertically */
-    gap: 3rem; /* Space between the image and text */
 }
 
 .headshot {
@@ -135,15 +139,15 @@ nav ul li {
     line-height: 1.4; /* More space between lines */
     letter-spacing: 0.5px; /* Slight spacing for better readability */
     color: #333; /* Darker color for contrast */
-    font-family: sans-serif; /* Choose a clean, modern font */
-    text-align: center; /* Center the text */
+    font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
+    text-align: left; /* Center the text */
     margin: 20px 0; /* Add spacing around the text */
 }
 
 .about-text em {
     font-style: italic; /* Italicize the emphasized text */
     font-weight: bold; /* Bold for extra emphasis */
-    color: var(--text-emphasis); /* A cool color for emphasis */
+    color: var(--text-emphasis,coral); /* A cool color for emphasis */
 }
 
 
@@ -174,6 +178,21 @@ nav ul li {
     margin-bottom: 1rem; /* Space below the paragraph */
 }
   
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
+section {
+    animation: fadeIn 0.6s ease-out;
+}
+
 .about-section {
     font-family: 'Arial', sans-serif; /* Clean and modern font */
     background-color: #fafafa; /* Light background for the section */
@@ -207,7 +226,7 @@ nav ul li {
 }
   
 .about-section details[open] summary {
-    color: var(--text-emphasis); /* Change color when details is open */
+    color: var(--text-emphasis,coral); /* Change color when details is open */
 }
   
 .about-section details[open] p {
@@ -229,12 +248,12 @@ hgroup > p {
 }
 
 footer p {
-    background-color: var(--primary-color); /* Dark background for the footer */
+    background-color: var(--primary-color, ); /* Dark background for the footer */
     color: #fff; /* White text for contrast */
     padding: 1.5rem 0; /* Vertical padding for spacing */
     text-align: center; /* Center the text */
     font-size: 1.2rem; /* Larger font size for readability */
-    border-top: 3px solid var(--text-emphasis); /* Optional: add a thin border to separate from content */
+    border-top: 3px solid var(--text-emphasis,coral); /* Optional: add a thin border to separate from content */
     margin-top: 2rem; /* Space between footer and the content above */
     margin: 0; /* Remove default margin */
 }
@@ -287,6 +306,12 @@ dl {
     }
     .about-section {
         padding: 1.5rem; /* Slightly smaller padding on smaller screens */
+    }
+    
+    .about-content {
+        display: flex;
+        align-items: center; /* Centers vertically */
+        gap: 3rem; /* Space between the image and text */
     }
     
     .about-section h3 {
@@ -388,51 +413,51 @@ form {
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  fieldset {
+fieldset {
     border: none;
     padding: 0;
     margin: 0;
-  }
+}
   
-  legend {
+legend {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--primary-color, );
     margin-bottom: 20px;
     text-align: center;
-  }
+}
   
-  label {
+label {
     display: block;
     font-size: 1rem;
     margin-bottom: 5px;
     font-weight: 600;
-  }
+}
   
-  input, textarea, select {
+input, textarea, select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
+}
   
-  input:focus, textarea:focus, select:focus {
+input:focus, textarea:focus, select:focus {
     outline: none;
-    border-color: var(--primary-color);
+    border-color: var(--primary-color, darkblue);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  textarea {
+textarea {
     resize: vertical;
     min-height: 150px;
-  }
+}
   
-  button {
-    background-color: var(--primary-color);
+button {
+    background-color: var(--button-color, blue);
     color: white;
     font-size: 1rem;
     padding: 12px 20px;
@@ -442,18 +467,45 @@ form {
     display: block;
     width: 100%;
     margin-top: 10px;
-  }
+    transition: color 0.3s ease-in-out;
+}
   
-  button:hover {
+button:hover {
     background-color: #333;
-  }
+}
   
-  select {
+select {
     background-color: #fff;
-  }
+}
+
+.nav-links li:has(a[href="index.html"]:hover),
+.nav-links li:has(a[href="index.html"]:focus) {
+    transform: scale(1.2);
+}
   
+.nav-links li:has(a[href="portfolio.html"]:hover),
+.nav-links li:has(a[href="portfolio.html"]:focus) {
+    transform: scale(1.2);
+}
+  
+.nav-links li:has(a[href="info.html"]:hover),
+.nav-links li:has(a[href="info.html"]:focus) {
+    transform: scale(1.2);
+}
+  
+.nav-links li:has(a[href="labs.html"]:hover),
+.nav-links li:has(a[href="labs.html"]:focus) {
+    transform: scale(1.2);
+}
+  
+.nav-links li:has(a[href="contact.html"]:hover),
+.nav-links li:has(a[href="contact.html"]:focus) {
+    transform: scale(1.2);
+}
+  
+
   /* Responsive styling for mobile */
-  @media (max-width: 600px) {
+  @media (max-width: 480px) {
     form {
       padding: 15px;
     }
@@ -478,6 +530,7 @@ form {
 
 /* CUSTOM ELEMENT */
 fancy-card {
+    animation: fadeIn 1.0s ease-out;
     display: block;
     border: 2px solid currentColor;
     padding: 1.5rem;
@@ -507,7 +560,7 @@ fancy-card footer {
     text-align: center;
     font-size: 0.9rem;
     font-style: italic;
-    color: var(--text-emphasis);
+    color: var(--text-emphasis, magenta);
 }
 /* Mobile-friendly layout */
 @media (max-width: 768px) {
