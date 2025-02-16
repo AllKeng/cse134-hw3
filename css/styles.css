@@ -221,7 +221,7 @@ h2 {
     margin: 0 0;               /* Adds space above and below the heading */
     padding: 1rem;                /* Adds padding for extra spacing */
 }
-hgroup > h3 {
+hgroup > p {
     text-align: center;           /* Centers the text horizontally */
     font-size: 1.5rem;              /* Makes the font larger for emphasis */
     margin: 0 0;
@@ -348,15 +348,17 @@ colgroup col:nth-child(2) {
 }
   
 .resume {
-    display: block;          /* Makes <a> a block element */
-    text-align: center;      /* Centers the inline content (the button) */
-}
-
-.resume button {
-    display: inline-block;   /* Makes the button inline-block so it can be centered */
-    margin: 1rem auto;          /* This centers the button horizontally */
-    padding: 10px 20px;      /* Optional: for better button appearance */
-    font-size: 16px;         /* Optional: to adjust the font size */
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0077B5;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  margin: 1rem auto;
+  position: sticky;
+  left: 45%;
 }
 
 dialog {
@@ -463,6 +465,9 @@ form {
     input, textarea, select {
       font-size: 1rem;
     }
+    .resume {
+        left: 15%;
+      }
   }
   
 .contact-methods {
